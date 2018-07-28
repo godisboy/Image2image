@@ -1,0 +1,25 @@
+# data sets
+name: cat2cat
+dataPath: /media/scw4750/dataset/single-cat2dog            #Path to data set
+num_workers: 2
+batchSize: 1
+loadSize: 286
+fineSize: 256
+flip: 1                             # 1 for flipping image randomly, 0 for not
+# network parameters
+input_nc: 3
+output_nc: 3
+ngf: 64
+ndf: 64
+norm: in
+n_downsample: 2
+n_upsample: 2
+n_resblock: 4
+
+# optimize parameters
+niter: 100000
+lr: 0.0002
+beta1: 0.5
+
+# checkpoints
+outf: checkpoints

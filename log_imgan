@@ -1,0 +1,264 @@
+{'gpu_ids': 2, 'config': 'configs/cat2cat.yaml', 'cuda': True, 'manualSeed': None}
+('random seed: ', 4346)
+(Generator(
+  (encoder): ResEncoder(
+    (model): Sequential(
+      (0): Conv2dBlock(
+        (pad): ZeroPad2d((3, 3, 3, 3))
+        (norm): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False)
+        (activation): ReLU(inplace)
+        (conv): Conv2d (3, 64, kernel_size=(7, 7), stride=(1, 1))
+      )
+      (1): Conv2dBlock(
+        (pad): ZeroPad2d((1, 1, 1, 1))
+        (norm): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False)
+        (activation): ReLU(inplace)
+        (conv): Conv2d (64, 128, kernel_size=(4, 4), stride=(2, 2))
+      )
+      (2): Conv2dBlock(
+        (pad): ZeroPad2d((1, 1, 1, 1))
+        (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+        (activation): ReLU(inplace)
+        (conv): Conv2d (128, 256, kernel_size=(4, 4), stride=(2, 2))
+      )
+      (3): ResBlock(
+        (model): Sequential(
+          (0): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (activation): ReLU(inplace)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+          (1): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+        )
+      )
+      (4): ResBlock(
+        (model): Sequential(
+          (0): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (activation): ReLU(inplace)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+          (1): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+        )
+      )
+      (5): ResBlock(
+        (model): Sequential(
+          (0): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (activation): ReLU(inplace)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+          (1): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+        )
+      )
+      (6): ResBlock(
+        (model): Sequential(
+          (0): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (activation): ReLU(inplace)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+          (1): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+        )
+      )
+    )
+    (common_latent): Avglatentlayer(
+    )
+  )
+  (decoder): ResDecoder(
+    (model): Sequential(
+      (0): ResBlock(
+        (model): Sequential(
+          (0): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (activation): ReLU(inplace)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+          (1): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+        )
+      )
+      (1): ResBlock(
+        (model): Sequential(
+          (0): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (activation): ReLU(inplace)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+          (1): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+        )
+      )
+      (2): ResBlock(
+        (model): Sequential(
+          (0): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (activation): ReLU(inplace)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+          (1): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+        )
+      )
+      (3): ResBlock(
+        (model): Sequential(
+          (0): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (activation): ReLU(inplace)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+          (1): Conv2dBlock(
+            (pad): ZeroPad2d((1, 1, 1, 1))
+            (norm): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False)
+            (conv): Conv2d (256, 256, kernel_size=(3, 3), stride=(1, 1))
+          )
+        )
+      )
+      (4): Conv2dBlock(
+        (norm): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False)
+        (activation): ReLU(inplace)
+        (conv): ConvTranspose2d (256, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), output_padding=(1, 1))
+      )
+      (5): Conv2dBlock(
+        (norm): InstanceNorm2d(64, eps=1e-05, momentum=0.1, affine=False)
+        (activation): ReLU(inplace)
+        (conv): ConvTranspose2d (128, 64, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), output_padding=(1, 1))
+      )
+      (6): Conv2dBlock(
+        (pad): ReflectionPad2d((3, 3, 3, 3))
+        (activation): Tanh()
+        (conv): Conv2d (64, 3, kernel_size=(7, 7), stride=(1, 1))
+      )
+    )
+  )
+), PatchD(
+  (layer1): Sequential(
+    (0): Conv2d (3, 64, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (1): LeakyReLU(0.2, inplace)
+  )
+  (layer2): Sequential(
+    (0): Conv2d (64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True)
+    (2): LeakyReLU(0.2, inplace)
+  )
+  (layer3): Sequential(
+    (0): Conv2d (128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(1, 1))
+    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True)
+    (2): LeakyReLU(0.2, inplace)
+  )
+  (layer4): Sequential(
+    (0): Conv2d (256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True)
+    (2): LeakyReLU(0.2, inplace)
+  )
+  (layer5): Sequential(
+    (0): Conv2d (512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(1, 1))
+    (1): Sigmoid()
+  )
+))
+([100/100000][100/5]) loss_D: 1.384815 loss_G: 1.882897 loss_cycle_aba: 0.249587 loss_cycle_bab: 0.132272 loss_mmd: 0.000030 
+([200/100000][100/5]) loss_D: 1.301510 loss_G: 2.127666 loss_cycle_aba: 0.273515 loss_cycle_bab: 0.322957 loss_mmd: 0.000030 
+([300/100000][100/5]) loss_D: 1.372879 loss_G: 1.863169 loss_cycle_aba: 0.140803 loss_cycle_bab: 0.115266 loss_mmd: 0.000030 
+([400/100000][100/5]) loss_D: 1.288273 loss_G: 2.343412 loss_cycle_aba: 0.222729 loss_cycle_bab: 0.315031 loss_mmd: 0.000042 
+([500/100000][100/5]) loss_D: 1.344088 loss_G: 2.047619 loss_cycle_aba: 0.292203 loss_cycle_bab: 0.162308 loss_mmd: 0.000036 
+([600/100000][100/5]) loss_D: 1.334406 loss_G: 2.307722 loss_cycle_aba: 0.238760 loss_cycle_bab: 0.206726 loss_mmd: 0.000035 
+([700/100000][100/5]) loss_D: 1.312244 loss_G: 2.464032 loss_cycle_aba: 0.242127 loss_cycle_bab: 0.198820 loss_mmd: 0.000035 
+([800/100000][100/5]) loss_D: 1.328038 loss_G: 2.691807 loss_cycle_aba: 0.418875 loss_cycle_bab: 0.230325 loss_mmd: 0.000033 
+([900/100000][100/5]) loss_D: 1.489847 loss_G: 2.454562 loss_cycle_aba: 0.285181 loss_cycle_bab: 0.217733 loss_mmd: 0.000028 
+([1000/100000][100/5]) loss_D: 1.004978 loss_G: 3.217535 loss_cycle_aba: 0.333412 loss_cycle_bab: 0.395836 loss_mmd: 0.000026 
+([1100/100000][100/5]) loss_D: 1.193618 loss_G: 3.307207 loss_cycle_aba: 0.226151 loss_cycle_bab: 0.278342 loss_mmd: 0.000023 
+([1200/100000][100/5]) loss_D: 1.206058 loss_G: 2.895962 loss_cycle_aba: 0.270499 loss_cycle_bab: 0.227590 loss_mmd: 0.000020 
+([1300/100000][100/5]) loss_D: 1.006592 loss_G: 3.335987 loss_cycle_aba: 0.274948 loss_cycle_bab: 0.247181 loss_mmd: 0.000021 
+([1400/100000][100/5]) loss_D: 0.818683 loss_G: 3.539206 loss_cycle_aba: 0.204058 loss_cycle_bab: 0.295218 loss_mmd: 0.000020 
+([1500/100000][100/5]) loss_D: 1.694978 loss_G: 3.266293 loss_cycle_aba: 0.307013 loss_cycle_bab: 0.213725 loss_mmd: 0.000019 
+([1600/100000][100/5]) loss_D: 1.128034 loss_G: 3.398073 loss_cycle_aba: 0.185798 loss_cycle_bab: 0.326537 loss_mmd: 0.000018 
+([1700/100000][100/5]) loss_D: 0.984435 loss_G: 3.023139 loss_cycle_aba: 0.322283 loss_cycle_bab: 0.316966 loss_mmd: 0.000020 
+([1800/100000][100/5]) loss_D: 0.915384 loss_G: 3.693367 loss_cycle_aba: 0.171638 loss_cycle_bab: 0.221128 loss_mmd: 0.000018 
+([1900/100000][100/5]) loss_D: 0.988301 loss_G: 3.259056 loss_cycle_aba: 0.340025 loss_cycle_bab: 0.314775 loss_mmd: 0.000018 
+([2000/100000][100/5]) loss_D: 0.811243 loss_G: 4.398826 loss_cycle_aba: 0.288099 loss_cycle_bab: 0.299931 loss_mmd: 0.000022 
+([2100/100000][100/5]) loss_D: 0.814319 loss_G: 4.235432 loss_cycle_aba: 0.212050 loss_cycle_bab: 0.378053 loss_mmd: 0.000017 
+([2200/100000][100/5]) loss_D: 0.801437 loss_G: 3.842820 loss_cycle_aba: 0.217646 loss_cycle_bab: 0.348695 loss_mmd: 0.000015 
+([2300/100000][100/5]) loss_D: 1.744282 loss_G: 3.741539 loss_cycle_aba: 0.351595 loss_cycle_bab: 0.214149 loss_mmd: 0.000014 
+([2400/100000][100/5]) loss_D: 0.746873 loss_G: 3.963989 loss_cycle_aba: 0.264781 loss_cycle_bab: 0.295976 loss_mmd: 0.000016 
+([2500/100000][100/5]) loss_D: 1.337176 loss_G: 4.622795 loss_cycle_aba: 0.246823 loss_cycle_bab: 0.394485 loss_mmd: 0.000015 
+([2600/100000][100/5]) loss_D: 0.663649 loss_G: 4.284767 loss_cycle_aba: 0.362292 loss_cycle_bab: 0.324964 loss_mmd: 0.000014 
+([2700/100000][100/5]) loss_D: 0.816779 loss_G: 3.789832 loss_cycle_aba: 0.490689 loss_cycle_bab: 0.260548 loss_mmd: 0.000013 
+([2800/100000][100/5]) loss_D: 0.821972 loss_G: 3.727491 loss_cycle_aba: 0.323626 loss_cycle_bab: 0.413669 loss_mmd: 0.000014 
+([2900/100000][100/5]) loss_D: 0.793297 loss_G: 3.728908 loss_cycle_aba: 0.223528 loss_cycle_bab: 0.309148 loss_mmd: 0.000014 
+([3000/100000][100/5]) loss_D: 1.407318 loss_G: 3.014903 loss_cycle_aba: 0.170514 loss_cycle_bab: 0.156417 loss_mmd: 0.000015 
+([3100/100000][100/5]) loss_D: 1.851475 loss_G: 3.636319 loss_cycle_aba: 0.199636 loss_cycle_bab: 0.205469 loss_mmd: 0.000014 
+([3200/100000][100/5]) loss_D: 0.686496 loss_G: 4.943255 loss_cycle_aba: 0.215227 loss_cycle_bab: 0.539894 loss_mmd: 0.000013 
+([3300/100000][100/5]) loss_D: 0.809918 loss_G: 3.762864 loss_cycle_aba: 0.252350 loss_cycle_bab: 0.360859 loss_mmd: 0.000014 
+([3400/100000][100/5]) loss_D: 0.894210 loss_G: 4.098205 loss_cycle_aba: 0.207871 loss_cycle_bab: 0.367043 loss_mmd: 0.000014 
+([3500/100000][100/5]) loss_D: 0.629517 loss_G: 4.508319 loss_cycle_aba: 0.277631 loss_cycle_bab: 0.294463 loss_mmd: 0.000013 
+([3600/100000][100/5]) loss_D: 1.056987 loss_G: 4.341775 loss_cycle_aba: 0.274609 loss_cycle_bab: 0.212582 loss_mmd: 0.000013 
+([3700/100000][100/5]) loss_D: 0.685462 loss_G: 4.059291 loss_cycle_aba: 0.286791 loss_cycle_bab: 0.400608 loss_mmd: 0.000013 
+([3800/100000][100/5]) loss_D: 0.691395 loss_G: 4.689547 loss_cycle_aba: 0.269609 loss_cycle_bab: 0.476531 loss_mmd: 0.000013 
+([3900/100000][100/5]) loss_D: 0.779320 loss_G: 4.076737 loss_cycle_aba: 0.202092 loss_cycle_bab: 0.460556 loss_mmd: 0.000013 
+([4000/100000][100/5]) loss_D: 0.691704 loss_G: 3.891853 loss_cycle_aba: 0.228854 loss_cycle_bab: 0.361208 loss_mmd: 0.000013 
+([4100/100000][100/5]) loss_D: 0.768079 loss_G: 3.980673 loss_cycle_aba: 0.206512 loss_cycle_bab: 0.370706 loss_mmd: 0.000011 
+([4200/100000][100/5]) loss_D: 0.789068 loss_G: 4.000864 loss_cycle_aba: 0.161271 loss_cycle_bab: 0.337815 loss_mmd: 0.000012 
+([4300/100000][100/5]) loss_D: 0.698062 loss_G: 4.248728 loss_cycle_aba: 0.166421 loss_cycle_bab: 0.320300 loss_mmd: 0.000012 
+([4400/100000][100/5]) loss_D: 0.826142 loss_G: 3.930629 loss_cycle_aba: 0.385781 loss_cycle_bab: 0.396546 loss_mmd: 0.000012 
+([4500/100000][100/5]) loss_D: 0.744420 loss_G: 4.184563 loss_cycle_aba: 0.185427 loss_cycle_bab: 0.423378 loss_mmd: 0.000012 
+([4600/100000][100/5]) loss_D: 0.809933 loss_G: 3.546135 loss_cycle_aba: 0.297160 loss_cycle_bab: 0.428343 loss_mmd: 0.000012 
+([4700/100000][100/5]) loss_D: 0.734837 loss_G: 3.838468 loss_cycle_aba: 0.169551 loss_cycle_bab: 0.348001 loss_mmd: 0.000012 
+([4800/100000][100/5]) loss_D: 0.782710 loss_G: 4.390994 loss_cycle_aba: 0.193731 loss_cycle_bab: 0.463314 loss_mmd: 0.000012 
+([4900/100000][100/5]) loss_D: 0.607323 loss_G: 4.459208 loss_cycle_aba: 0.356629 loss_cycle_bab: 0.389365 loss_mmd: 0.000012 
+([5000/100000][100/5]) loss_D: 0.707388 loss_G: 3.973140 loss_cycle_aba: 0.142397 loss_cycle_bab: 0.348208 loss_mmd: 0.000012 
+([5100/100000][100/5]) loss_D: 0.788135 loss_G: 4.000243 loss_cycle_aba: 0.268410 loss_cycle_bab: 0.387152 loss_mmd: 0.000012 
+([5200/100000][100/5]) loss_D: 1.775360 loss_G: 3.552022 loss_cycle_aba: 0.138295 loss_cycle_bab: 0.471063 loss_mmd: 0.000012 
+([5300/100000][100/5]) loss_D: 0.643207 loss_G: 4.080573 loss_cycle_aba: 0.139533 loss_cycle_bab: 0.515979 loss_mmd: 0.000011 
+([5400/100000][100/5]) loss_D: 0.766556 loss_G: 4.455592 loss_cycle_aba: 0.279610 loss_cycle_bab: 0.387296 loss_mmd: 0.000012 
+([5500/100000][100/5]) loss_D: 0.714206 loss_G: 3.593472 loss_cycle_aba: 0.169009 loss_cycle_bab: 0.399795 loss_mmd: 0.000010 
+([5600/100000][100/5]) loss_D: 0.769793 loss_G: 3.562982 loss_cycle_aba: 0.169896 loss_cycle_bab: 0.382577 loss_mmd: 0.000010 
+([5700/100000][100/5]) loss_D: 0.728104 loss_G: 3.765069 loss_cycle_aba: 0.196097 loss_cycle_bab: 0.431759 loss_mmd: 0.000010 
+([5800/100000][100/5]) loss_D: 1.268175 loss_G: 3.178016 loss_cycle_aba: 0.145659 loss_cycle_bab: 0.190004 loss_mmd: 0.000010 
+([5900/100000][100/5]) loss_D: 1.448361 loss_G: 3.828248 loss_cycle_aba: 0.296994 loss_cycle_bab: 0.217503 loss_mmd: 0.000010 
+([6000/100000][100/5]) loss_D: 0.660156 loss_G: 4.580018 loss_cycle_aba: 0.258682 loss_cycle_bab: 0.359016 loss_mmd: 0.000010 
+([6100/100000][100/5]) loss_D: 1.393946 loss_G: 4.215578 loss_cycle_aba: 0.137525 loss_cycle_bab: 0.218443 loss_mmd: 0.000010 
+([6200/100000][100/5]) loss_D: 0.915734 loss_G: 4.951959 loss_cycle_aba: 0.272787 loss_cycle_bab: 0.510300 loss_mmd: 0.000010 
+([6300/100000][100/5]) loss_D: 0.771317 loss_G: 4.433432 loss_cycle_aba: 0.494539 loss_cycle_bab: 0.390457 loss_mmd: 0.000009 
+([6400/100000][100/5]) loss_D: 1.459984 loss_G: 4.248453 loss_cycle_aba: 0.472526 loss_cycle_bab: 0.214951 loss_mmd: 0.000010 
+([6500/100000][100/5]) loss_D: 1.257348 loss_G: 3.793494 loss_cycle_aba: 0.322503 loss_cycle_bab: 0.341521 loss_mmd: 0.000011 
+([6600/100000][100/5]) loss_D: 0.749077 loss_G: 3.705943 loss_cycle_aba: 0.228749 loss_cycle_bab: 0.511572 loss_mmd: 0.000011 
+([6700/100000][100/5]) loss_D: 0.546665 loss_G: 4.559815 loss_cycle_aba: 0.236831 loss_cycle_bab: 0.479689 loss_mmd: 0.000010 
+([6800/100000][100/5]) loss_D: 0.578716 loss_G: 4.112049 loss_cycle_aba: 0.209291 loss_cycle_bab: 0.343523 loss_mmd: 0.000010 
+([6900/100000][100/5]) loss_D: 0.608409 loss_G: 4.559500 loss_cycle_aba: 0.166993 loss_cycle_bab: 0.452063 loss_mmd: 0.000011 
+([7000/100000][100/5]) loss_D: 0.636540 loss_G: 4.277194 loss_cycle_aba: 0.172775 loss_cycle_bab: 0.374579 loss_mmd: 0.000010 
+([7100/100000][100/5]) loss_D: 0.639332 loss_G: 5.093015 loss_cycle_aba: 0.167581 loss_cycle_bab: 0.483176 loss_mmd: 0.000010 
+([7200/100000][100/5]) loss_D: 2.069421 loss_G: 3.878109 loss_cycle_aba: 0.158262 loss_cycle_bab: 0.217720 loss_mmd: 0.000010 
+([7300/100000][100/5]) loss_D: 0.748586 loss_G: 4.481368 loss_cycle_aba: 0.173416 loss_cycle_bab: 0.428814 loss_mmd: 0.000010 
