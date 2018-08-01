@@ -149,7 +149,8 @@ class Avglatentlayer(nn.Module):
         Input a latent and compute the average representation
         """
         super(Avglatentlayer, self).__init__()
-        self.avglatent = Variable(torch.zeros(1, 64*4, 64, 64).cuda(), volatile=False)
+        # self.avglatent = Variable(torch.zeros(1, 64*4, 64, 64).cuda(), volatile=False)
+        self.register_buffer('avglatent', torch.zeros(1, 64*4, 64, 64))
         self.threshold = 1000.
         self.count = 1.
 
@@ -157,14 +158,13 @@ class Avglatentlayer(nn.Module):
         if self.train():
             if self.count > self.threshold:
                 self.count = 1
-                self.avglatent.data = input.data
+                self.avglatent = input.data
             else:
                 self.count += 1
-                self.avglatent.data = (self.avglatent.data + input.data) / self.count
+                self.avglatent = (self.avglatent + input.data) / self.count
         else:
             pass
-
-        return self.avglatent
+        return Variable(self.avglatent).cuda()
 
 
 # Patch discriminator
